@@ -123,6 +123,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &213297040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213297042}
+  - component: {fileID: 213297041}
+  - component: {fileID: 213297043}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &213297041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213297040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd68fbe6775830b4390c4459a1427bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7472178810140636195, guid: a13435aff0ccdf24dbf3bae6d68c5493, type: 3}
+--- !u!4 &213297042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213297040}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -70.1, y: -50.330875, z: 0.76721096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &213297043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213297040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71064d38ce1e08a4a8feae6840643da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionRadius: 10
+  _explosionForce: 10
 --- !u!1 &490175195
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +195,7 @@ GameObject:
   - component: {fileID: 490175198}
   - component: {fileID: 490175197}
   - component: {fileID: 490175196}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +301,7 @@ GameObject:
   - component: {fileID: 506175169}
   - component: {fileID: 506175168}
   - component: {fileID: 506175167}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +407,7 @@ GameObject:
   - component: {fileID: 569612494}
   - component: {fileID: 569612493}
   - component: {fileID: 569612492}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +513,7 @@ GameObject:
   - component: {fileID: 589529044}
   - component: {fileID: 589529043}
   - component: {fileID: 589529042}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 780614180}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +948,7 @@ GameObject:
   - component: {fileID: 1070929337}
   - component: {fileID: 1070929336}
   - component: {fileID: 1070929335}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,10 +1285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3add53b364ee3da4d9bccfabcb73a7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7472178810140636195, guid: a13435aff0ccdf24dbf3bae6d68c5493, type: 3}
-  _explosionRadius: 4
-  _explosionForce: 10
-  _divisionChance: 100
 --- !u!1 &5411136595896305040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,10 +1502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3add53b364ee3da4d9bccfabcb73a7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7472178810140636195, guid: a13435aff0ccdf24dbf3bae6d68c5493, type: 3}
-  _explosionRadius: 4
-  _explosionForce: 10
-  _divisionChance: 100
 --- !u!114 &7472178809596036199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,10 +1514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3add53b364ee3da4d9bccfabcb73a7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7472178810140636195, guid: a13435aff0ccdf24dbf3bae6d68c5493, type: 3}
-  _explosionRadius: 4
-  _explosionForce: 10
-  _divisionChance: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1474,3 +1522,4 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 780614180}
   - {fileID: 1955945590}
+  - {fileID: 213297042}

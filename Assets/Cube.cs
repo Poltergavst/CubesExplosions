@@ -3,62 +3,33 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Renderer))]
+
 public class Cube : MonoBehaviour
 {
-    private int _divisionChance = 100;
+    private Renderer _renderer;
 
-    [SerializeField]  private Cube _prefab;
-    [SerializeField]  private int _explosionRadius = 10, _explosionForce = 10;
+    public int DivisionChance { get; private set; }
 
-    private void OnMouseUpAsButton()
+    private void Awake()
     {
-        if (CanBeDivided() == true)
-        {
-            Divide();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        _renderer = GetComponent<Renderer>();
+        DivisionChance = 100;
     }
 
-    public void LowerDivisionChance(int previousDivisionChance)
+    public void Initialize(Vector3 scale, Color color, int divisionChance)
     {
-        int reductionFactor = 2;
-
-        _divisionChance = previousDivisionChance / reductionFactor;
+        transform.localScale = scale;
+        DivisionChance = divisionChance;
+        _renderer.material.color = color;
     }
 
-    private bool CanBeDivided()
+    public bool CanBeDivided()
     {
         int maxChance = 100;
         int minChance = 0;
 
-        return Random.Range(minChance, maxChance) <= _divisionChance;
-    }
-
-    private void Divide()
-    {
-        Cube currentCube;
-
-        int minToSpawn = 2;
-        int maxToSpawn = 6;
-        int cubesToSpawn;
-
-        int scaleDivider = 2;
-
-        cubesToSpawn = Random.Range(minToSpawn, maxToSpawn + 1);
-
-        for (int i = 0; i < cubesToSpawn; i++)
-        {
-            currentCube = Instantiate(_prefab, transform.position, Quaternion.identity);
-
-            currentCube.transform.localScale = transform.localScale / scaleDivider;
-            currentCube.GetComponent<Renderer>().material.color = Random.ColorHSV();
-            currentCube.LowerDivisionChance(_divisionChance);
-            currentCube.GetComponent<Rigidbody>().AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
-        }
-
-        Destroy(gameObject);
+        return Random.Range(minChance, maxChance) <= DivisionChance;
     }
 }
